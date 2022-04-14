@@ -15,18 +15,6 @@ class WoWNewsBridge extends XPathAbstract {
 					'Deutsch' => 'de-de',
 					'English (EU)' => 'en-gb',
 					'English (US)' => 'en-us',
-					'Español (EU)' => 'es-es',
-					'Español (AL)' => 'es-mx',
-					'Français' => 'fr-fr',
-					'Italiano' => 'it-it',
-					'日本語' => 'ja-jp',
-					'한국어' => 'ko-kr',
-					'Polski' => 'pl-pl',
-					'Português (AL)' => 'pt-br',
-					'Русский' => 'ru-ru',
-					'ภาษาไทย' => 'th-th',
-					'简体中文' => 'zh-cn',
-					'繁體中文' => 'zh-tw'
 				),
 				'defaultValue' => 'en-us',
 				'title' => 'Select your language'
@@ -51,9 +39,6 @@ class WoWNewsBridge extends XPathAbstract {
 	protected function getSourceUrl(){
 
 		$locale = $this->getInput('locale');
-		if('zh-cn' === $locale) {
-			return 'https://cn.news.blizzard.com';
-		}
 		return 'https://worldofwarcraft.com/'$locale'/news';
 	}
 }
