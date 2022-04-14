@@ -2,11 +2,13 @@
 
 class PlaywonderlandsNewsBridge extends XPathAbstract {
 
-	const NAME = 'Tiny Tina\'s Wonderlands News';
+	const NAME = 'Tiny Tinas Wonderlands News';
 	const URI = 'https://playwonderlands.2k.com/news/';
-	const DESCRIPTION = 'Tiny Tina\'s Wonderlands newsfeed';
+	const DESCRIPTION = 'Tiny Tinas Wonderlands newsfeed';
 	const MAINTAINER = 'Kyle-Tweedie';
-	const PARAMETERS = '';
+	const PARAMETERS = array(
+		'' => array()
+	);
 	const CACHE_TIMEOUT = 3600;
 
 	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/main/div/div[2]/div/div/div/div';
