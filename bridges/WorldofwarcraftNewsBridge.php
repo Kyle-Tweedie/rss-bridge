@@ -40,6 +40,6 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 	protected function getSourceUrl(){
 
 		$locale = $this->getInput('locale');
-		return 'https://worldofwarcraft.com/'$locale'/news';
+		return 'https://worldofwarcraft.com/' . $locale . '/news';
 	}
 }
