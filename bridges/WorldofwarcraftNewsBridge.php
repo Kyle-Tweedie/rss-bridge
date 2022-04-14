@@ -1,8 +1,8 @@
 <?php
 
-class WoWNewsBridge extends XPathAbstract {
+class WorldofwarcraftNewsBridge extends XPathAbstract {
 
-	const NAME = 'WoW News';
+	const NAME = 'World of Warcraft News';
 	const URI = 'https://worldofwarcraft.com/news';
 	const DESCRIPTION = 'World of Warcraft newsfeed';
 	const MAINTAINER = 'Kyle-Tweedie';

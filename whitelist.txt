@@ -1,2 +1,2 @@
 BlizzardNewsBridge
-WoWNewsBridge
+WorldofwarcraftNewsBridge
