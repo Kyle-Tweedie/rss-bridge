@@ -1,6 +1,5 @@
 <?php
-
-class WorldofwarcraftNewsBridge extends XPathAbstract {
+class WorldofwarcraftNewsBridge extends BridgeAbstract {
 
 	const NAME = 'World of Warcraft News';
 	const URI = 'https://worldofwarcraft.com/news';
@@ -21,27 +20,22 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 			)
 		)
 	);
-	const CACHE_TIMEOUT = 3600;
 
-	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/main/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div/article';
-	const XPATH_EXPRESSION_ITEM_TITLE = './/div/div/div[2]/div[2]/div/div/div/div/time';
-	const XPATH_EXPRESSION_ITEM_CONTENT = './/div/div/div[2]/div[1]/p';
-	const XPATH_EXPRESSION_ITEM_URI = './/a[@class="Link NewsBlog-link"]/@href';
-	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
-	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/div/div/div[2]/div[2]/div/div/div/div/time/@datetime';
-	const XPATH_EXPRESSION_ITEM_ENCLOSURES = '';
-	const XPATH_EXPRESSION_ITEM_CATEGORIES = '';
-	const SETTING_FIX_ENCODING = true;
+	public function collectData() {
+		$url = 'https://worldofwarcraft.com/' . $this->getInput('locale') . '/news';
+		$html = getSimpleHTMLDOM($url)->find('.NewsBlog', 0);
+		$html = defaultLinkTo($html, $this->getURI());
 
-	/**
-	 * Source Web page URL (should provide either HTML or XML content)
-	 * @return string
-	 */
-	protected function getSourceUrl(){
+		foreach($html->find('._2H7Su') as $article) {
+			$item = array();
 
-		$locale = $this->getInput('locale');
-		return 'https://worldofwarcraft.com/' . $locale . '/news';
+			$title = $article->find('.NewsBlog-title', 0);
+			$item['title'] = $title->plaintext;
+			$item['uri'] = $title->href;
+			$item['content'] = $article->find('.NewsBlog-desc color-beige-medium font-size-xSmall', 0)->plaintext;
+			$item['timestamp'] = strtotime($article->find('time', 0)->datetime);
+
+			$this->items[] = $item;
+		}
 	}
 }
-
-// /html/body/div[1]/div/main/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/article/div/div/div[2]/div[2]/div/div/div/div/time
