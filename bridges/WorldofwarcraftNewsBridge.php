@@ -29,9 +29,9 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 	const XPATH_EXPRESSION_ITEM_URI = './/a[@class="Link NewsBlog-link"]/@href';
 	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
 	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/div/div/div[2]/div[2]/div/div/div/div/time/@datetime';
-	const XPATH_EXPRESSION_ITEM_ENCLOSURES = '//div/div/div[1]/div/img[@class="NewsBlog-image"]';
+	const XPATH_EXPRESSION_ITEM_ENCLOSURES = './/div/div/div[1]/div/img[@class="NewsBlog-image"]';
 	const XPATH_EXPRESSION_ITEM_CATEGORIES = '';
-	const SETTING_FIX_ENCODING = false;
+	const SETTING_FIX_ENCODING = true;
 
 	/**
 	 * Source Web page URL (should provide either HTML or XML content)
