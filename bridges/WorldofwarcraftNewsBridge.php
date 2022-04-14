@@ -25,10 +25,10 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 
 	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/main/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div/article';
 	const XPATH_EXPRESSION_ITEM_TITLE = './/div/div/div[2]/div[1]/div[@class="NewsBlog-title"]';
-	const XPATH_EXPRESSION_ITEM_CONTENT = './/*[@id="main"]/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/article/div/div/div[2]/div[1]/p[@class="NewsBlog-desc color-beige-medium font-size-xSmall]';
+	const XPATH_EXPRESSION_ITEM_CONTENT = './/*[@id="main"]/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/article/div/div/div[2]/div[1]/p[@class="NewsBlog-desc]';
 	const XPATH_EXPRESSION_ITEM_URI = './/a[@class="Link NewsBlog-link"]/@href';
 	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
-	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/div/div/div[2]/div[2]/div/div/div/div[@class="NewsBlog-date LocalizedDateMount"]/time/@datetime';
+	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/div/div/div[2]/div[2]/div/div/div/div[@class="NewsBlog-date"]/time/@datetime';
 	const XPATH_EXPRESSION_ITEM_ENCLOSURES = './/div/div/div[1]/div/img[@class="NewsBlog-image"]/@src';
 	const XPATH_EXPRESSION_ITEM_CATEGORIES = '';
 	const SETTING_FIX_ENCODING = true;
