@@ -25,7 +25,7 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 
 	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/main/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div/article';
 	const XPATH_EXPRESSION_ITEM_TITLE = './/div/div/div[2]/div[1]/div[@class="NewsBlog-title"]';
-	const XPATH_EXPRESSION_ITEM_CONTENT = './/*[@id="main"]/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/article/div/div/div[2]/div[1]/p[@class="NewsBlog-desc]';
+	const XPATH_EXPRESSION_ITEM_CONTENT = './/div/div/div[2]/div[1]/p[@class="NewsBlog-desc]';
 	const XPATH_EXPRESSION_ITEM_URI = './/a[@class="Link NewsBlog-link"]/@href';
 	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
 	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/div/div/div[2]/div[2]/div/div/div/div[@class="NewsBlog-date"]/time/@datetime';
@@ -43,6 +43,3 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 		return 'https://worldofwarcraft.com/' . $locale . '/news';
 	}
 }
-
-
-//*[@id="main"]/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/article/div/div/div[2]/div[2]/div/div/div/div/time
