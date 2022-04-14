@@ -43,7 +43,3 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 		return 'https://worldofwarcraft.com/' . $locale . '/news';
 	}
 }
-
-/*
-/html/body/div[1]/div/main/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/article/div/div/div[2]/div[2]/div/div/div/div/time
-*/
