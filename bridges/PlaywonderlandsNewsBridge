@@ -7,7 +7,17 @@ class PlaywonderlandsNewsBridge extends XPathAbstract {
 	const DESCRIPTION = 'Tiny Tinas Wonderlands newsfeed';
 	const MAINTAINER = 'Kyle-Tweedie';
 	const PARAMETERS = array(
-		'' => array()
+		'' => array(
+			'locale' => array(
+				'name' => 'Language',
+				'type' => 'list',
+				'values' => array(
+					'English (US)' => 'en-us',
+				),
+				'defaultValue' => 'en-us',
+				'title' => 'Select your language'
+			)
+		)
 	);
 	const CACHE_TIMEOUT = 3600;
 
@@ -19,13 +29,15 @@ class PlaywonderlandsNewsBridge extends XPathAbstract {
 	const XPATH_EXPRESSION_ITEM_TIMESTAMP = '';
 	const XPATH_EXPRESSION_ITEM_ENCLOSURES = './/div/img/@src';
 	const XPATH_EXPRESSION_ITEM_CATEGORIES = '';
-	const SETTING_FIX_ENCODING = true;
+	const SETTING_FIX_ENCODING = false;
 
 	/**
 	 * Source Web page URL (should provide either HTML or XML content)
 	 * @return string
 	 */
 	protected function getSourceUrl(){
+        
+        $locale = $this->getInput('locale');
 		return 'https://playwonderlands.2k.com/news/';
 	}
 }
