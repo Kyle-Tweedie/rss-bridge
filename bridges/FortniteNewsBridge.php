@@ -3,8 +3,8 @@
 class FortniteNewsBridge extends XPathAbstract {
 
 	const NAME = 'Fortnite News';
-	const URI = 'https://www.epicgames.com/fortnite/news/';
-	const DESCRIPTION = 'News from https://www.epicgames.com/fortnite/en-US/news/';
+	const URI = 'https://www.epicgames.com/fortnite/news';
+	const DESCRIPTION = 'News from https://www.epicgames.com/fortnite/en-US/news';
 	const MAINTAINER = 'Kyle-Tweedie';
 	const PARAMETERS = array(
 		'' => array(
@@ -12,9 +12,7 @@ class FortniteNewsBridge extends XPathAbstract {
 				'name' => 'Language',
 				'type' => 'list',
 				'values' => array(
-                    'Deutsch' => 'de-de',
-					'English (EU)' => 'en-gb',
-					'English (US)' => 'en-us'
+					'English (US)' => 'en-US'
 				),
 				'defaultValue' => 'en-us',
 				'title' => 'Select your language'
@@ -24,11 +22,11 @@ class FortniteNewsBridge extends XPathAbstract {
 	const CACHE_TIMEOUT = 3600;
 
 	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/div/div[3]/div/div/div/div[3]/div/a';
-	const XPATH_EXPRESSION_ITEM_TITLE = './/h1[@class="title"]';
+	const XPATH_EXPRESSION_ITEM_TITLE = './/h1';
 	const XPATH_EXPRESSION_ITEM_CONTENT = '';
 	const XPATH_EXPRESSION_ITEM_URI = './/@href';
 	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
-	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/h4[@class="date"]';
+	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/h4';
 	const XPATH_EXPRESSION_ITEM_ENCLOSURES = './/img/@src';
 	const XPATH_EXPRESSION_ITEM_CATEGORIES = '';
 	const SETTING_FIX_ENCODING = false;

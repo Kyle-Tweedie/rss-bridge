@@ -5,7 +5,7 @@
 class AlbumoftheyearBridge extends XPathAbstract {
 
 	const NAME = 'New Album Releases';
-	const URI = 'https://www.albumoftheyear.org/releases/';
+	const URI = 'https://www.albumoftheyear.org/releases';
 	const DESCRIPTION = 'New Album Releases from albumoftheyear.org';
 	const MAINTAINER = 'Kyle-Tweedie';
 	const PARAMETERS = array(
@@ -40,6 +40,6 @@ class AlbumoftheyearBridge extends XPathAbstract {
 	protected function getSourceUrl(){
 
         $locale = $this->getInput('locale');
-		return 'https://www.albumoftheyear.org/releases/';
+		return 'https://www.albumoftheyear.org/releases';
 	}
 }
