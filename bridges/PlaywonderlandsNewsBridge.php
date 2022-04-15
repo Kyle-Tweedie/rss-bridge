@@ -26,7 +26,7 @@ class PlaywonderlandsBridge extends XPathAbstract {
 	const XPATH_EXPRESSION_ITEM_CONTENT = './/article/p';
 	const XPATH_EXPRESSION_ITEM_URI = './/a[@class="bc-link bc-link--internal bc-link--button bc-link--primary bc-news-tile__article-link"]/@href';
 	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
-	const XPATH_EXPRESSION_ITEM_TIMESTAMP = '';
+	const XPATH_EXPRESSION_ITEM_TIMESTAMP = '/html/body/div[1]/div/main/div/div[2]/div/div/div/div/@publishdate';
 	const XPATH_EXPRESSION_ITEM_ENCLOSURES = './/div/img/@src';
 	const XPATH_EXPRESSION_ITEM_CATEGORIES = '';
 	const SETTING_FIX_ENCODING = false;
