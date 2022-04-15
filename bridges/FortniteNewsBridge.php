@@ -40,6 +40,6 @@ class FortniteNewsBridge extends XPathAbstract {
 	protected function getSourceUrl(){
 
         $locale = $this->getInput('locale');
-		return 'https://www.epicgames.com/fortnite/' . $locale . '/news/';
+		return 'https://www.epicgames.com/fortnite/' . $locale . '/news';
 	}
 }
