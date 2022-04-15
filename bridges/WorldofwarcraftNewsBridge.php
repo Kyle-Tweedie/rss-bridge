@@ -2,9 +2,9 @@
 
 class WorldofwarcraftNewsBridge extends XPathAbstract {
 
-	const NAME = 'Tiny Tinas Wonderlands News';
-	const URI = 'https://playwonderlands.2k.com/news/';
-	const DESCRIPTION = 'Tiny Tinas Wonderlands newsfeed';
+	const NAME = 'World of Warcraft News';
+	const URI = 'https://worldofwarcraft.com/news';
+	const DESCRIPTION = 'World of Warcraft newsfeed';
 	const MAINTAINER = 'Kyle-Tweedie';
 	const PARAMETERS = array(
 		'' => array(
@@ -12,6 +12,8 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 				'name' => 'Language',
 				'type' => 'list',
 				'values' => array(
+					'Deutsch' => 'de-de',
+					'English (EU)' => 'en-gb',
 					'English (US)' => 'en-us',
 				),
 				'defaultValue' => 'en-us',
@@ -21,23 +23,23 @@ class WorldofwarcraftNewsBridge extends XPathAbstract {
 	);
 	const CACHE_TIMEOUT = 3600;
 
-	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/main/div/div[2]/div/div/div/div';
-	const XPATH_EXPRESSION_ITEM_TITLE = './/article/h2';
-	const XPATH_EXPRESSION_ITEM_CONTENT = './/article/p';
-	const XPATH_EXPRESSION_ITEM_URI = './/a[@class="bc-link bc-link--internal bc-link--button bc-link--primary bc-news-tile__article-link"]/@href';
+	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/main/div/div[2]/div/div[2]/div[5]/div[2]/div/div[1]/div[1]/div[1]/div/div/article';
+	const XPATH_EXPRESSION_ITEM_TITLE = './/div[@class="NewsBlog-title"]';
+	const XPATH_EXPRESSION_ITEM_CONTENT = './/div/div/div[2]/div[1]/p';
+	const XPATH_EXPRESSION_ITEM_URI = './/a[@class="Link NewsBlog-link"]/@href';
 	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
-	const XPATH_EXPRESSION_ITEM_TIMESTAMP = '';
-	const XPATH_EXPRESSION_ITEM_ENCLOSURES = './/div/img/@src';
+	const XPATH_EXPRESSION_ITEM_TIMESTAMP = './/time';
+	const XPATH_EXPRESSION_ITEM_ENCLOSURES = './/div/div/div[1]/div/img/@data-src';
 	const XPATH_EXPRESSION_ITEM_CATEGORIES = '';
-	const SETTING_FIX_ENCODING = false;
+	const SETTING_FIX_ENCODING = true;
 
 	/**
 	 * Source Web page URL (should provide either HTML or XML content)
 	 * @return string
 	 */
 	protected function getSourceUrl(){
-        
-        $locale = $this->getInput('locale');
-		return 'https://playwonderlands.2k.com/news/';
+
+		$locale = $this->getInput('locale');
+		return 'https://worldofwarcraft.com/' . $locale . '/news';
 	}
 }
