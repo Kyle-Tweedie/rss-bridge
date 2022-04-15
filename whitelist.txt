@@ -1,3 +1,4 @@
 BlizzardNewsBridge
 WorldofwarcraftNewsBridge
 PlaywonderlandsNewsBridge
+FortniteNewsBridge
