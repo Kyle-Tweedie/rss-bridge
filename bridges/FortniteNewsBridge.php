@@ -22,7 +22,7 @@ class FortniteNewsBridge extends XPathAbstract {
 	const CACHE_TIMEOUT = 3600;
 
 	const XPATH_EXPRESSION_ITEM = '/html/body/div[1]/div/div/div[3]/div/div/div/div[3]/div/a';
-	const XPATH_EXPRESSION_ITEM_TITLE = './/h1';
+	const XPATH_EXPRESSION_ITEM_TITLE = './/@title';
 	const XPATH_EXPRESSION_ITEM_CONTENT = '';
 	const XPATH_EXPRESSION_ITEM_URI = './/@href';
 	const XPATH_EXPRESSION_ITEM_AUTHOR = '';
