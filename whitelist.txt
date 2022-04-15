@@ -1,4 +1,4 @@
 BlizzardNewsBridge
 WorldofwarcraftNewsBridge
-PlaywonderlandsBridge
+PlaywonderlandsNewsBridge
 AnidexBridge

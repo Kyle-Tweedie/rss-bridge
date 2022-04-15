@@ -1,6 +1,6 @@
 <?php
 
-class PlaywonderlandsBridge extends XPathAbstract {
+class PlaywonderlandsNewsBridge extends XPathAbstract {
 
 	const NAME = 'Tiny Tinas Wonderlands News';
 	const URI = 'https://playwonderlands.2k.com/news/';
