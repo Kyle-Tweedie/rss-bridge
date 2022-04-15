@@ -1,5 +1,7 @@
 <?php
 
+// Requites Cloudflare Challange Bypass. On hold for now.
+
 class AlbumoftheyearBridge extends XPathAbstract {
 
 	const NAME = 'New Album Releases';

@@ -1,5 +1,3 @@
 BlizzardNewsBridge
 WorldofwarcraftNewsBridge
 PlaywonderlandsNewsBridge
-AnidexBridge
-AlbumoftheyearBridge
